@@ -33,7 +33,7 @@ app.post('/login', (req,res) => {
     
 })
 
-app.get('/myprofile', (req, res)=>{
+app.get('/myprofileee', (req, res)=>{
     var token = req.headers['authorization']
     jwt.verify(token, secretkey, function(err,decoded){
         if(decoded==undefined){
@@ -44,6 +44,11 @@ app.get('/myprofile', (req, res)=>{
         }
     } );
     
+})
+
+app.post('/acc',(req, res) =>{
+    let body = req.body
+    res.json(body)
 })
 
 app.get('/myprofile/:userid', (req,res) => {
